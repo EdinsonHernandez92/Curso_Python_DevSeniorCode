@@ -39,3 +39,11 @@ if numero_2 > numero_1:
 
 if numero_1 == numero_2:
     print(f"Son el mismo número")
+
+# Ejercicio 4 Verificación Edad
+edad = int(input("Ingresa tu edad:"))
+
+if edad >= 18:
+    print(f"Puedes votar")
+if edad < 18:
+    print(f"No puedes votar")
