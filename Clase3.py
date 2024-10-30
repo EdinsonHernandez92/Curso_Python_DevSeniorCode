@@ -25,4 +25,4 @@ else:
 
 for i in range(10):
     print(i)
-    
+# While cuando no tenemos claro el número de veces a ejecutar. Buscar qué es +=
