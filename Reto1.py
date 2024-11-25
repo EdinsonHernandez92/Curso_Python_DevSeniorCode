@@ -49,9 +49,9 @@ def calcularExperimento(listaExperimentos):
         return
     
     for experimento in listaExperimentos:
-        promedio = statistics.mean(experimento.resultado)
-        maximo = max(experimento.resultado)
-        minimo = min(experimento.resultado)
+        promedio = round(statistics.mean(experimento.resultado), 2)
+        maximo = round(max(experimento.resultado), 2)
+        minimo = round(min(experimento.resultado), 2)
         print(f"\nCalculo de estadisticas de {experimento.nombreExperimento}")
         print(f"Promedio de resultados: {promedio}")
         print(f"Maximo de resultados: {maximo}")
@@ -112,7 +112,11 @@ def menu():
         print("5. Generar informe: ")
         print("6. Salir: ")
 
-        opcion = int(input("Seleccione una opcion: "))
+        try:
+            opcion = int(input("Selecciones una opcion: "))
+        except ValueError:
+            print("Por favor, ingrese un numero valido")
+            continue
 
         if opcion == 1:
             agregarExperimento(listaExperimentos)
@@ -128,7 +132,7 @@ def menu():
             print("Saliendo del programa...")
             break
         else:
-            print("Opcion invalida")
+            print("Opcion invalida. Por favor intente nuevamente")
         
 if __name__ == "__main__":
     menu()
